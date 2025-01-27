@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&family=Open+Sans:wght@300;400;500;600&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #B0C4DE;
+    border-radius: 30px;
+    margin-top: 0.5cm;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
+    border-radius: 30px;
+}
+
+.form-header {
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: left;
+}
+
+.form-header h1::after {
+    display: block;
+    width: 5rem;
+    height: 0.3rem;
+    background-color: #a1c5f5d7;
+    margin: 0 auto;
+    position: absolute;
+    border-radius: 10px;
+}
+
+.text {
+    display: flex;
+    margin-bottom: 1.1rem;
+    font-size: 1.0rem;
+    align-content: center;
+}
+
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.1rem;
+}
+
+.input-box input {
+    margin: 0.6rem 0;
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px #0000001c;
+    font-size: 1rem;
+}
+
+.input-box select {
+    margin: 0.6rem 0;
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px #0000001c;
+    font-size: 0.8rem;
+}
+
+.input-box select:hover {
+    background-color: #6d99eb75;
+}
+
+.input-box select:focus-visible {
+    outline: 1px solid #f3f2f8;
+}
+
+.input-box label,
+.opcao-title h6 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-left: auto;
+    margin-right: auto;
+    color: #000000c0;
+}
+
+.input-box select::placeholder {
+    color: #000000be;
+}
+
+.continue-button input {
+    width: 60%;
+    border: none;
+    background-color: #a1c5f5d7;
+    padding: 0.62rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;   
+}
+
+.continue-button input:hover {
+    background-color: #1E90FF;
+}
+    
+.continue-button input a {
+    text-decoration: none;
+    font-weight: 500;
+    color: #fff;
+    display: block;
+    justify-content: center;
+    
+}
+
+.tooltip {
+    position: relative;
+    display: contents;
+    display: flex;
+    align-items: right;
+    justify-content: right;   
+}
+
+  .tooltip .tooltiptext {
+    align-content: end;
+    visibility: hidden;
+    width: 120px;
+    background-color: #6d99eb75;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+}
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+ .size_of_img{
+  width:70px
+} 
+
+@media screen  {
+    
+    .form {
+        width: 90%;
+        display: block;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #F5F5F5;
+        padding: 3rem;
+        border-radius: 30px;
+    }
+
+    .continue-button input {
+        margin-left: 12rem; 
+} 
+
+}
+
+@media screen and (min-width: 1000px) and (max-width: 2040px) {
+    
+    .form {
+        width: 75%;
+        display: block;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #F5F5F5;
+        padding: 3rem;
+        border-radius: 30px;
+    }
+
+    .continue-button input {
+        margin-left: 14rem; 
+} 
+
+} 
+
+@media screen and (min-width: 2040px) and (max-width: 3000px) {
+    
+    .form {
+        width: 65%;
+        display: block;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #F5F5F5;
+        padding: 3rem;
+        border-radius: 30px;
+    }
+
+    .continue-button input {
+        margin-left: 17rem; 
+} 
+
+} 

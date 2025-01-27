@@ -1,0 +1,142 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Opções do catálogo</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="{% static 'principal/css/inserir_catalogo.css'%}">
+</head>
+
+<body>
+
+ <div class="form">
+  <form class="formulario" method="POST"> {% csrf_token %}
+
+    <img src="{% static 'principal/img/trt.png' %}" alt="Logo" style="float:left" width="40%">
+    
+    <div style="align-content: space-between">
+     <div class="tooltip">
+      <a href="https://catalogo-glpi.trt1.jus.br/principal/escolher/"><img src="{% static 'principal/img/home.png' %}" alt="Página inicial" width="40" height="40" style="float:right"></a></a><span class="tooltiptext">Página inicial</span>
+     </div>
+
+     <br>
+     
+     <div class="tooltip">
+      <a href="https://catalogo-glpi.trt1.jus.br/principal/pedidos/"><img src="{% static 'principal/img/lista.png' %}" alt="Lista de pedidos" width="40" height="40"></a><span class="tooltiptext">Pedidos</span>     
+     </div>
+     
+    </div>
+       
+  <div class="input-group">
+     
+     <div class="input-master">
+      <label for="serviço">Exemplo de serviço</label> 
+     </div>
+     
+     <br>
+     
+     <div class="text">
+      <label for="servico-modelo">[Tipo=Requisição (REQ)] - [Área=Atendimento (ATD)] Sistemas > Sistemas Administrativos > Gestão de Contratos > Dúvidas Administrativo::Contratos SLA=[1080]</label>
+     </div>
+
+     <br>
+     <br>
+
+     <p>
+      <div class="input-master">
+       <label for="serviço">Novo Serviço</label>
+      </div> 
+     </p>
+     
+     <br>
+
+     <div class="linha-um">
+      <label for="fila">Fila (Grupo Resolvedor)</label>
+      <select id="fila" name="fila" required>
+        <option></option>
+         {% for x in resolvedor %}
+        <option value="{{x.nome}}" > {{x.nome}}</option>
+         {% endfor %}
+      </select>
+    </div>
+   
+     <div class="linha-um">
+      <label for="tipo">Tipo</label>
+      <select id="tipo" name="tipo" required>
+        <option></option>
+        <option value="Requisição (REQ)">Requisição (REQ)</option>
+        <option value="Incidente (INC)">Incidente (INC)</option>
+      </select>
+     </div>            
+
+     <div class="linha-um">
+      <label for="area">Área</label>
+      <select id="area" name="area" required>
+        <option></option>
+        <option value="Interno (TI)">Interno (TI)</option>
+        <option value="Atendimento (ATD)">Atendimento (ATD)</option>
+      </select>
+     </div>   
+
+     <div class="linha-dois">
+      <label for="categoria_n0">Categoria N0</label>
+      <select id="categoria_n0" name="categoria_n0" required>
+        <option></option>
+          {% for x in cat_n0 %}
+        <option value="{{x}}" > {{x}}</option>    
+          {% endfor %}
+      </select>
+     </div>  
+          
+    <div class="linha-dois">
+      <label for="categoria_n1">Categoria N1</label>
+      <input type="text" name="categoria_n1" required>
+    </div>
+
+    <div class="linha-dois">
+      <label for="categoria_n2">Categoria N2</label>
+      <input type="text" name="categoria_n2" required>
+    </div>
+
+    <div class="linha-dois">
+      <label for="categoria_n3">Categoria N3 - opcional</label>
+      <input type="text" name="categoria_n3">
+    </div>
+
+    <div class="linha-tres">
+      <label for="SLA">SLA</label>
+      <input type="text" name="SLA" placeholder="Ex: 540 minutos" required>
+     </div>
+
+     <div class="linha-tres">
+      <label for="resolvedores">Resolvedores</label>
+      <input type="text" name="resolvedores" placeholder="Ex: joão.silva, josé.campos" required>
+     </div>
+
+     <div class="linha-tres">
+      <label for="Gestores">Gestores</label>
+      <input type="text" name="gestores" placeholder="Ex: pedro.santos, carlos.oliveira" required>
+     </div>
+
+     <div class="input-box-coment">
+      <label for="comentarios">Nova Fila e Comentários</label>
+      <input type="text" name="comentarios" placeholder="Inclusão de nova fila e informações diversas não contempladas nos campos anteriores">
+     </div>
+
+  </div>
+
+    <div class="continue-button" >
+     <input name="botao" type="submit" value="SOLICITAR INCLUSÃO" onclick="cadastro()">
+    </div>
+
+    <label id="name_save" hidden> {{nome_save}}</label>
+           
+  </form>
+
+ </div>
+
+</body>
+
+   <script src="{% static 'principal/js/inserir_catalogo.js'%}"></script>
+
+</html>

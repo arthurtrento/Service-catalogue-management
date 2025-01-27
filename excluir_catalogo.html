@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+ <head>
+  <title>Opções do catálogo</title>
+  <meta charset="utf-8"/>
+  <link rel="stylesheet" href="{% static 'principal/css/excluir_catalogo.css'%}">
+ </head>
+
+<body>
+
+ <div class="form">
+
+  <form class="formulario" method="POST"> {% csrf_token %}
+
+  <img src="{% static 'principal/img/trt.png' %}" alt="Logo" style="float:left" width="30%">
+    
+  <div style="align-content: space-between">
+   <div class="tooltip">
+    <a href="https://catalogo-glpi.trt1.jus.br/principal/escolher/"><img src="{% static 'principal/img/home.png' %}" alt="Página inicial" width="40" height="40" style="float:right"></a></a><span class="tooltiptext">Página inicial</span>
+   </div>
+
+   <br>
+
+   <div class="tooltip">
+    <a href="https://catalogo-glpi.trt1.jus.br/principal/pedidos/"><img src="{% static 'principal/img/lista.png' %}" alt="Lista de pedidos" width="40" height="40"></a><span class="tooltiptext">Pedidos</span>     
+   </div>
+
+   <br>
+
+ </div>
+
+ <br>
+
+ <div class="input-group">
+  <div class="input-box">
+    <label for="fila">Fila (Grupo Resolvedor)</label>
+    <select id="fila" name="fila" onchange="GerarCombo()" required>
+     <option></option>
+       {% for x in resolvedor %}
+         <option value="{{x.nome}}" > {{x.nome}}</option>
+       {% endfor %}
+    </select>
+  </div>
+
+  <div class="input-box">
+   <label for="serviço">Serviço</label>
+   <select id="serviço" name="serv" hidden>
+    <option></option>
+      {% for x in servicos %}
+        <option value="{{x.servico_completo}}"  > {{x.servico_completo}}</option>
+      {% endfor %}                   
+   </select>
+   <select id="escolserv" name="escolserv">
+    <option></option>
+   </select>
+    
+   <br>
+
+   <div class="continue-button">
+    <input name="botao" type="submit" value="SOLICITAR EXCLUSÃO" onclick="cadastro()">
+   </div>
+
+  </div>
+
+ </div>     
+
+</form>
+
+</body>
+   <script src="{% static 'principal/js/excluir_catalogo.js'%}"></script>
+</html>

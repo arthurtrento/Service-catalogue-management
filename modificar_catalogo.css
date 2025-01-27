@@ -1,0 +1,424 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&family=Open+Sans:wght@300;400;500;600&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    background: #B0C4DE;
+    border-radius: 30px;
+    margin-top: 1.2cm;
+    margin-bottom: 0.5;
+    padding: 3rem;
+    
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
+    border-radius: 30px;
+}
+
+.input-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; 
+    padding: 1rem 0;
+}
+
+
+.input-master {
+    display: flex;
+    width:1100px;
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+    
+}
+
+.text {
+    display: flex;
+    margin-bottom: 0.5rem;
+    font-size: 1.0rem;
+    align-content: center;
+}
+
+.linha-um {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+    /* margin: 0 auto; */
+    width: 450px;
+}
+
+.linha-um input {
+    margin: 0.6rem 0;
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px #0000001c;
+    font-size: 0.7rem;
+}
+
+.linha-um select {
+    margin: 0.6rem 0;
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px #0000001c;
+    font-size: 0.7rem;
+}
+
+.linha-um input:hover {
+    background-color: #6d99eb75;
+}
+
+.linha-um select:hover {
+    background-color: #6d99eb75;
+}
+
+.linha-um input:focus-visible {
+    outline: 1px solid #f3f2f8;
+}
+
+.linha-um select:focus-visible {
+    outline: 1px solid #f3f2f8;
+}
+
+.linha-um label,
+.opcao-title h6 {
+    font-size: 0.7rem;
+    font-weight: 600;
+    margin-left: auto;
+    margin-right: auto;
+    color: #000000c0;
+}
+
+.linha-um input::placeholder {
+    color: #000000be;
+}
+
+.linha-dois {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+    width: 250px;
+}
+
+.linha-dois input {
+    margin: 0.6rem 0;
+    margin-right: 0.2cm;
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px #0000001c;
+    font-size: 0.8rem;
+}
+
+.linha-dois select {
+    margin: 0.6rem 0;
+    margin-right: 0.2cm;
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px #0000001c;
+    font-size: 0.8rem;
+}
+
+.linha-dois input:hover {
+    background-color: #6d99eb75;
+}
+
+.linha-dois select:hover {
+    background-color: #6d99eb75;
+}
+
+.linha-dois input:focus-visible {
+    outline: 1px solid #f3f2f8;
+}
+
+.linha-dois select:focus-visible {
+    outline: 1px solid #f3f2f8;
+}
+
+.linha-dois label,
+.opcao-title h6 {
+    font-size: 0.7rem;
+    font-weight: 600;
+    margin-left: auto;
+    margin-right: auto;
+    color: #000000c0;
+}
+
+.linha-dois input::placeholder {
+    color: #000000be;
+}
+
+.linha-tres {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+    width: 300px; 
+}
+
+.linha-tres input {
+    margin: 0.6rem 0;
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px #0000001c;
+    font-size: 0.8rem;
+}
+
+.linha-tres select {
+    margin: 0.6rem 0;
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px #0000001c;
+    font-size: 0.8rem;
+}
+
+.linha-tres input:hover {
+    background-color: #6d99eb75;
+}
+
+.linha-tres select:hover {
+    background-color: #6d99eb75;
+}
+
+.linha-tres input:focus-visible {
+    outline: 1px solid #f3f2f8;
+}
+
+.linha-tres select:focus-visible {
+    outline: 1px solid #f3f2f8;
+}
+
+.linha-tres label,
+.opcao-title h6 {
+    font-size: 0.7rem;
+    font-weight: 600;
+    margin-left: auto;
+    margin-right: auto;
+    color: #000000c0;
+}
+
+.linha-tres input::placeholder {
+    color: #000000be;
+}
+
+.input-box-coment {
+    display: flex;
+    width:770px;
+    flex-direction: column;
+    margin-bottom: 1.1rem;
+}
+
+.input-box-coment input {
+    margin: 0.6rem 0;
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px #0000001c;
+    font-size: 0.8rem;
+}
+
+.input-box-coment select {
+    margin: 0.6rem 0;
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px #0000001c;
+    font-size: 0.8rem;
+}
+
+.input-box-coment input:hover {
+    background-color: #6d99eb75;
+}
+
+.input-box-coment input:focus-visible {
+    outline: 1px solid #f3f2f8;
+}
+
+.input-box-coment label,
+.opcao-title h6 {
+    font-size: 0.7rem;
+    font-weight: 600;
+    margin-left: auto;
+    margin-right: auto;
+    color: #000000c0;
+}
+
+.input-box-coment input::placeholder {
+    color: #000000be;
+}
+
+.input-master select {
+    margin: 0.6rem 0;
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px #0000001c;
+    font-size: 0.8rem;
+}
+
+.input-master select:hover {
+    background-color: #6d99eb75;
+}
+
+.input-master select:focus-visible {
+    outline: 1px solid #f3f2f8;
+}
+
+.input-master label,
+.opcao-title h6 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-left: auto;
+    margin-right: auto;
+    color: #000000c0;
+    text-decoration: underline;
+}
+
+.input-master input::placeholder {
+    color: #000000be;
+}
+
+.continue-button input {
+    width: 40%;
+    margin-left: 20rem; 
+    border: none;
+    background-color: #a1c5f5d7;
+    padding: 0.62rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+.continue-button input:hover {
+    background-color: #1E90FF;
+}
+    
+.continue-button input a {
+    text-decoration: none;
+    font-weight: 500;
+    color: #fff;
+    display: block;
+    justify-content: center;
+    
+}
+
+.tooltip {
+    position: relative;
+    display: contents;
+    display: flex;
+    align-items: right;
+    justify-content: right;   
+}
+
+  .tooltip .tooltiptext {
+    align-content: end;
+    visibility: hidden;
+    width: 120px;
+    background-color: #6d99eb75;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+}
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+ .size_of_img{
+  width:70px
+} 
+
+
+@media screen  {
+    
+    .form {
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #F5F5F5;
+        padding: 3rem;
+        border-radius: 30px;
+    }
+} 
+
+@media screen and (min-width: 500px) and (max-width: 1799px) {
+    
+    .form {
+        /* max-width: 80%; */
+        width: 60%;
+        display: table;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #F5F5F5;
+        border-radius: 30px;
+        /* padding: 3rem; */
+    }
+} 
+
+@media screen and (min-width: 1800px) and (max-width: 2040px) {
+    
+    .form {
+        /* max-width: 1920px; */
+        width: 57%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #F5F5F5;
+        padding: 3rem;
+        border-radius: 30px;
+    }
+
+    .input-master {
+        display: flex;
+        width:1000px;
+        flex-direction: column;
+        margin-bottom: 1.1rem;
+    }
+} 
+
+@media screen and (min-width: 2040px) and (max-width: 3000px) {
+    
+    .form {
+        /* max-width: 2400px; */
+        width: 65%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #F5F5F5;
+        padding: 3rem;
+        border-radius: 30px;
+    }
+
+    .input-master {
+        display: flex;
+        width:100%;
+        flex-direction: column;
+        margin-bottom: 1.1rem;
+    }
+} 
+
+

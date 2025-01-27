@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'principal/css/escolher_catalogo1.css'%}">
+    <title>Escolher</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-image">
+            <img src="{% static 'principal/img/TRT1_fachada.png'%}" alt="">
+        </div>
+
+        <div class="form">
+            <form class="formulario" method="POST"> {% csrf_token %}
+                <div class="form-header">
+                    <div class="title">
+                        <h1>Solicitações de alteração no catálogo GLPI</h1>
+                    </div>  
+                </div>
+                  
+        <div class="continue-button">
+          <button type="submit">Lista de pedidos realizados</button>
+        </div> 
+
+    <br>
+    <br>
+
+                <div class="opcao">
+                    <div class="opcao-title">
+                        <h6>O que deseja fazer:</h6>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="opcao-group">
+
+                        <div class="opcao-input">
+                            <input id="inserir" type="radio" name="opcao" value="INSERIR">INSERIR
+                        </div>
+
+                        <div class="opcao-input">
+                            <input id="modificar" type="radio" name="opcao" value="MODIFICAR">MODIFICAR
+                        </div>
+
+                        <div class="opcao-input">
+                            <input id="excluir" type="radio" name="opcao" value="EXCLUIR">EXCLUIR
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="continue-button">
+                  <button type="submit" onclick="notificar_10dias()">CONFIRMAR </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+<script src="{% static 'principal/js/escolher_catalogo.js'%}"></script>
+
+</html>

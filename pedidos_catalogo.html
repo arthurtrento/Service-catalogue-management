@@ -1,0 +1,124 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+ <head>
+  <title>Opções do catálogo</title>
+  <meta charset="utf-8"/>
+  <link rel="stylesheet" href="{% static 'principal/css/pedidos_catalogo.css'%}">
+ </head>
+<body>
+
+ <div class="form">
+  <form class="formulario" method="POST"> {% csrf_token %}
+
+  <img src="{% static 'principal/img/trt.png' %}" alt="Logo" style="float:left" width="40%">
+    
+  <div style="align-content: space-between">
+   <div class="tooltip">
+    <a href="https://catalogo-glpi.trt1.jus.br/principal/escolher/"><img src="{% static 'principal/img/home.png' %}" alt="Página inicial" width="50" height="50" style="float:right"></a></a><span class="tooltiptext">Página inicial</span>
+   </div>
+
+  </div>
+
+ <br>
+ <br>
+ <br>
+ <br>
+
+
+ <div class="input-group">
+
+  <div class="input-box">
+    <label for="fila">Fila (Grupo Resolvedor)</label>
+    <select id="fila" name="fila" onchange="GerarCombo()" required>
+     <option></option>
+       {% for x in resolvedor %}
+     <option value="{{x.nome}}" > {{x.nome}}</option>
+       {% endfor %}
+    </select>
+  </div>
+
+  <div class="input-box">
+   <label for="insert">Inserir</label>
+   <div class="line">
+    <select id="insert" name="insert" hidden>
+     <option></option>
+       {% for x in pedidos_inserir %}
+     <option value="[Tipo={{x.tipo}}] [Área={{x.area}}] {{x.categoria_n0}} &gt {{x.categoria_n1}} &gt {{x.categoria_n2}} &gt {{x.categoria_n3}} - {{x.setor}} SLA=[{{x.sla}}] - ID=000{{x.id}}">{{x.data_criação}}</option> 
+       {% endfor %}                   
+    </select>
+    <select id="escolserv" name="escolserv">
+      <option></option>
+    </select>
+
+    <div class="continue-button">
+     <button type="submit" name="botao" value="insert" onclick="cadastro_inserir()">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 15 15">
+      <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z"></path>
+      <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z"></path>
+      </svg>
+     </button>
+    </div>
+
+   </div> 
+
+  </div>
+
+  <div class="input-box">
+   <label for="modificar">Modificar</label>
+    <div class="line">
+     <select id="modify" name="modify" hidden>
+      <option></option>
+        {% for x in pedidos_modificar %}
+          <option value="[Tipo={{x.tipo}}] [Área={{x.area}}] {{x.categoria_n0}} &gt {{x.categoria_n1}} &gt {{x.categoria_n2}} &gt {{x.categoria_n3}} - {{x.setor}} SLA=[{{x.sla}}] - ID=000{{x.id}}">  </option>
+        {% endfor %}                   
+     </select>
+     <select id="escolserv2" name="escolserv2">
+       <option></option>
+     </select>
+    <div class="continue-button">
+     <button type="submit" name="botao" value="modify" onclick="cadastro_modificar()">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 15 15">
+      <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z"></path>
+      <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z"></path>
+      </svg>
+     </button>
+    </div>
+
+   </div>
+
+  </div>
+
+  <div class="input-box">
+   <label for="excluir">Excluir</label>
+   <div class="line">
+    <select id="exclude" name="exclude" hidden>
+     <option></option>
+       {% for x in pedidos_excluir %}
+         <option value="{{x.serviço}} - {{x.setor}} - ID=000{{x.id}}"> </option>
+       {% endfor %}                   
+    </select>
+    <select id="escolserv3" name="escolserv3">
+      <option></option>
+    </select>
+
+    <div class="continue-button">
+     <button type="submit" name="botao" value="exclude" onclick="cadastro_excluir()">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 15 15">
+      <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z"></path>
+      <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z"></path>
+      </svg>
+     </button>
+    </div>
+
+   </div>
+
+  </div>
+
+</div>    
+ 
+</form>
+
+</body>
+   <script src="{% static 'principal/js/pedidos_catalogo.js'%}"></script>
+</html>
